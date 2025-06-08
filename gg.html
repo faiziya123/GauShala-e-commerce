@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Methods</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f3f3f3;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+    }
+
+    .payment-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      min-height: fit-content;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .payment-container {
+        flex-direction: column;
+        min-height: auto;
+        margin: 0;
+        border-radius: 0;
+      }
+    }
+
+    .tab {
+      width: 25%;
+      background-color: #fff;
+      border-right: 1px solid #e6e6e6;
+      border-radius: 8px 0 0 8px;
+    }
+
+    @media (max-width: 768px) {
+      .tab {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e6e6e6;
+        border-radius: 8px 8px 0 0;
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 10px;
+        background: #f8f8f8;
+      }
+
+      .tab button {
+        flex: 0 0 auto;
+        width: auto;
+        white-space: nowrap;
+        padding: 12px 16px;
+        margin-right: 8px;
+        border-radius: 6px;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+
+      .tab button svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+
+      .tab button.active {
+        background: #232f3e;
+        color: white;
+        border-left: none;
+      }
+    }
+
+    .tab button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+      color: #444;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .tab button:hover {
+      background-color: #f5f5f5;
+      color: #232f3e;
+    }
+
+    .tab button.active {
+      background-color: #f5f5f5;
+      color: #232f3e;
+      border-left: 3px solid #232f3e;
+      font-weight: 600;
+    }
+
+    .tab button svg {
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .tabcontent {
+      flex: 1;
+      padding: 24px;
+      display: none;
+      height: fit-content;
+      min-height: 500px;
+    }
+
+    @media (max-width: 768px) {
+      .tabcontent {
+        padding: 16px;
+      }
+      
+      .form-group {
+        margin-bottom: 16px;
+      }
+      
+      .button-group {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .btn {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .tabcontent.active {
+      display: block;
+    }
+
+    h3 {
+      margin: 0 0 24px 0;
+      font-size: 24px;
+      color: #232f3e;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="month"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    @media (max-width: 768px) {
+      input[type="text"],
+      input[type="password"],
+      input[type="month"] {
+        max-width: 100%;
+        font-size: 16px;
+      }
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="month"]:focus {
+      border-color: #232f3e;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(35,47,62,0.2);
+    }
+
+    .button-group {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #232f3e;
+      color: white;
+      margin-right: 12px;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a2532;
+    }
+
+    .btn-secondary {
+      background-color: #e6e6e6;
+      color: #444;
+    }
+
+    .btn-secondary:hover {
+      background-color: #d9d9d9;
+    }
+
+    .card-icons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 25px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="payment-container">
+    <div class="tab">
+      <button class="tablinks active" onclick="openPaymentMethod(event, 'creditCard')" id="defaultOpen">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+        Credit Card
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'debitCard')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+        Debit Card
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'debitCardPin')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        Debit Card + PIN
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'netBanking')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/></svg>
+        Net Banking
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'wallet')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        Wallet/Cash Card
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'imps')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        IMPS
+      </button>
+      <button class="tablinks" onclick="openPaymentMethod(event, 'googlePay')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8 8zm-1-6h2v2h-2zm0-8h2v6h-2z"/></svg>
+        Google Pay
+      </button>
+    </div>
+
+    <div id="creditCard" class="tabcontent active">
+      <h3>Pay with Credit Card</h3>
+      <div class="card-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="American Express" class="card-icon">
+      </div>
+      <form id="creditCardForm">
+        <div class="form-group">
+          <label for="ccNumber">Card Number</label>
+          <input type="text" id="ccNumber" name="card" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="ccExpiry">Expiration Date</label>
+          <input type="month" id="ccExpiry" name="month">
+        </div>
+        <div class="form-group">
+          <label for="ccCvv">CVV/CVC</label>
+          <input type="text" id="ccCvv" name="cvv" placeholder="123" maxlength="4">
+        </div>
+        <div class="form-group">
+          <label for="ccName">Cardholder Name</label>
+          <input type="text" id="ccName" name="name" placeholder="John Doe">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="debitCard" class="tabcontent">
+      <h3>Pay with Debit Card</h3>
+      <div class="card-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="American Express" class="card-icon">
+      </div>
+      <form id="debitCardForm">
+        <div class="form-group">
+          <label for="dcNumber">Card Number</label>
+          <input type="text" id="dcNumber" name="card" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="dcExpiry">Expiration Date</label>
+          <input type="month" id="dcExpiry" name="month">
+        </div>
+        <div class="form-group">
+          <label for="dcCvv">CVV/CVC</label>
+          <input type="text" id="dcCvv" name="cvv" placeholder="123" maxlength="4">
+        </div>
+        <div class="form-group">
+          <label for="dcName">Cardholder Name</label>
+          <input type="text" id="dcName" name="name" placeholder="John Doe">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="debitCardPin" class="tabcontent">
+      <h3>Pay with Debit Card + PIN</h3>
+      <div class="card-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" class="card-icon">
+      </div>
+      <form id="debitCardPinForm">
+        <div class="form-group">
+          <label for="dcpNumber">Card Number</label>
+          <input type="text" id="dcpNumber" name="card" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div class="form-group">
+          <label for="dcpExpiry">Expiration Date</label>
+          <input type="month" id="dcpExpiry" name="month">
+        </div>
+        <div class="form-group">
+          <label for="dcpCvv">CVV/CVC</label>
+          <input type="text" id="dcpCvv" name="cvv" placeholder="123" maxlength="4">
+        </div>
+        <div class="form-group">
+          <label for="dcpName">Cardholder Name</label>
+          <input type="text" id="dcpName" name="name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="dcpPin">ATM PIN</label>
+          <input type="password" id="dcpPin" name="pin" placeholder="Enter 4-digit PIN" maxlength="4">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="netBanking" class="tabcontent">
+      <h3>Pay with Net Banking</h3>
+      <form id="netBankingForm">
+        <div class="form-group">
+          <label for="nbUserId">User ID</label>
+          <input type="text" id="nbUserId" name="userid" placeholder="Enter your User ID">
+        </div>
+        <div class="form-group">
+          <label for="nbPassword">Password</label>
+          <input type="password" id="nbPassword" name="password" placeholder="Enter your password">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="wallet" class="tabcontent">
+      <h3>Pay with Wallet/Cash Card</h3>
+      <form id="walletForm">
+        <div class="form-group">
+          <label for="wNumber">Card Number</label>
+          <input type="text" id="wNumber" name="card" placeholder="Enter Card Number">
+        </div>
+        <div class="form-group">
+          <label for="wPin">PIN</label>
+          <input type="password" id="wPin" name="pin" placeholder="Enter PIN">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="imps" class="tabcontent">
+      <h3>Pay with IMPS</h3>
+      <form id="impsForm">
+        <div class="form-group">
+          <label for="impsMobile">Beneficiary Mobile Number</label>
+          <input type="text" id="impsMobile" name="mobile" placeholder="Enter mobile number" maxlength="10">
+        </div>
+        <div class="form-group">
+          <label for="impsMmid">MMID</label>
+          <input type="text" id="impsMmid" name="mmid" placeholder="Enter MMID" maxlength="7">
+        </div>
+        <div class="form-group">
+          <label for="impsAmount">Amount</label>
+          <input type="text" id="impsAmount" name="amount" placeholder="Enter amount">
+        </div>
+        <div class="form-group">
+          <label for="impsRemarks">Remarks (Optional)</label>
+          <input type="text" id="impsRemarks" name="remarks" placeholder="Add remarks">
+        </div>
+        <div class="form-group">
+          <label for="impsPassword">Transaction Password</label>
+          <input type="password" id="impsPassword" name="password" placeholder="Enter transaction password">
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="googlePay" class="tabcontent">
+      <h3>Pay with Google Pay</h3>
+      <div class="gpay-container">
+        <form id="googlePayForm">
+          <div class="form-group">
+            <label for="gpAmount">Amount</label>
+            <input type="text" id="gpAmount" name="amount" placeholder="Enter amount">
+          </div>
+          <div class="form-group">
+            <label for="gpNote">Note (Optional)</label>
+            <input type="text" id="gpNote" name="note" placeholder="Add a note">
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Confirm Payment</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+        <div class="qr-code-container">
+          <img src="assets/img/ChatGPT gpay img.png" alt="Google Pay QR Code" class="qr-code">
+        </div>
+      </div>
+      <style>
+        .gpay-container {
+          display: flex;
+          gap: 40px;
+          align-items: flex-start;
+        }
+
+        .gpay-container form {
+          flex: 1;
+        }
+
+        .qr-code-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          background: #f8f8f8;
+          border-radius: 12px;
+        }
+
+        .qr-code {
+          width: 200px;
+          height: 200px;
+          object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+          .gpay-container {
+            flex-direction: column;
+            gap: 24px;
+          }
+
+          .qr-code-container {
+            width: 100%;
+            padding: 16px;
+          }
+
+          .qr-code {
+            width: 180px;
+            height: 180px;
+          }
+        }
+      </style>
+
+    </div>
+  </div>
+
+  <script>
+    function openPaymentMethod(evt, methodName) {
+      var i, tabcontent, tablinks;
+      
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active");
+      }
+      
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      
+      document.getElementById(methodName).style.display = "block";
+      document.getElementById(methodName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    document.getElementById("defaultOpen").click();
+
+    // Add card number formatting
+    const cardInputs = document.querySelectorAll('input[name="card"]');
+    cardInputs.forEach(input => {
+      input.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        value = value.replace(/(.{4})/g, '$1 ').trim();
+        e.target.value = value;
+      });
+    });
+  </script>
+</body>
+</html>

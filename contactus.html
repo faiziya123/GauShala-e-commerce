@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact Us - Baba Bharathhari Ji Gaushala</title>
+    <meta content="Contact Baba Bharathhari Ji Gaushala in Himachal Pradesh for inquiries about our services including Panch Gavya, Organic Vegetables, and more" name="description">
+    <meta content="gaushala, contact, himachal pradesh, organic products, panch gavya" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+
+        a{
+            color: cadetblue;
+            text-decoration: none;
+        }
+        :root {
+            --primary-color: #1d863a;
+            --secondary-color: #155724;
+            --text-color: #444;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+        }
+
+  /* Header */
+  #header {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    @media (max-width: 1024px) 
+    {
+      
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column !important;
+        z-index: 60;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
+
+      .mobile-menu.show {
+        display: flex !important;
+      }
+
+      #hamburger-btn {
+        position: relative;
+        z-index: 70;
+        display: block;
+        background: transparent;
+        border: solid transparent;
+    }
+
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+      }
+
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+    .navbar a {
+      color: var(--text-color);
+      font-weight: 500;
+      padding: 10px 15px;
+      position: relative;
+    }
+
+    .navbar a:hover,
+    .navbar .active a {
+      color: var(--primary-color);
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      background: white;
+      padding: 10px 0;
+      border-radius: 8px;
+      min-width: 200px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    @media (max-width: 1024px) {
+      .dropdown-menu {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (max-width: 1024px) {
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+    .dropdown-item {
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: cadetblue;
+      padding-left: 25px;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 28px;
+      color: cadetblue;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 70;
+    }
+
+    @media (max-width: 991px) {
+      .navbar ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        overflow-y: auto;
+        padding: 1vh 20px 20px;
+        z-index: 60;
+
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .navbar a::after {
+        display: none;
+      }
+
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0;
+        padding: 10px 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
+
+      .navbar-mobile-active {
+        display: block !important;
+      }
+      
+      .main-content h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content .row {
+        flex-direction: column-reverse;
+      }
+      
+      .main-content .col-lg-6:first-child {
+        margin-top: 30px;
+      }
+      
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      padding: 40px 0;
+      background: var(--light-bg);
+    }
+
+    .breadcrumbs h2 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .breadcrumbs ol {
+      background: rgba(255,255,255,0.8);
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+    }
+    
+    .breadcrumbs ol li {
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    
+    .breadcrumbs ol li + li {
+      padding-left: 10px;
+    }
+    
+    .breadcrumbs ol li + li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: var(--text-color);
+      content: "/";
+    }
+    
+    @media (max-width: 768px) {
+      .breadcrumbs {
+        padding: 20px 0;
+      }
+      
+      .breadcrumbs h2 {
+        font-size: 1.5rem;
+      }
+      
+      .breadcrumbs ol {
+        padding: 6px 10px;
+      }
+    }
+
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+        }
+
+        .contact .info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact .info i {
+            font-size: 20px;
+            color: var(--primary-color);
+            float: left;
+            width: 40px;
+            height: 40px;
+            background: rgba(29, 134, 58, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .contact .info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-left: 55px;
+        }
+
+        .contact .info p {
+            padding-left: 55px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .contact .info iframe {
+            margin-top: 20px;
+        }
+
+        /* Contact Form */
+        .php-email-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .php-email-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .php-email-form label {
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            display: block;
+            color: var(--text-color);
+        }
+
+        .php-email-form input,
+        .php-email-form textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .php-email-form .mt-3 {
+            margin-top: 1.5rem;
+        }
+
+        .php-email-form button[type="submit"] {
+            margin-top: 1.5rem;
+            padding: 0.875rem 2.5rem;
+        }
+        .php-email-form input:focus,
+        .php-email-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .php-email-form button[type="submit"] {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .php-email-form button[type="submit"]:hover {
+            background: var(--secondary-color);
+        }
+
+        .php-email-form .loading,
+        .php-email-form .error-message,
+        .php-email-form .sent-message {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .php-email-form .loading {
+            background: #f4f4f4;
+            color: var(--text-color);
+        }
+
+        .php-email-form .error-message {
+            background: #fde8e8;
+            color: #e53e3e;
+        }
+
+        .php-email-form .sent-message {
+            background: #e6f4ea;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        #footer {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-top {
+            padding-bottom: 30px;
+        }
+
+        .footer-contact h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+        }
+
+        .copyright, .credits {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .credits a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+ <!-- Header -->
+ <header id="header" class="sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="index.html">Baba Bharathhari Ji Gaushala</a></h1>
+      </div>
+
+      
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  
+
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info w-100">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Kutheda Kherla, Teh. Amb Distt. Una, Himachal Pradesh</p>
+                            </div>
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>Officialgaushala@gmail.com</p>
+                            </div>
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>7018606101</p>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.125418538384!2d76.1128269244826!3d31.685139124138885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2226cf179d25%3A0xa09ec16e01d4b96a!2sKuthera%20Kherla%2C%20Amb%2C%20Himachal%20Pradesh%20177203!5e0!3m2!1sen!2sin!4v1709277986489!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" name="message" rows="10" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Baba Bharathhari Ji Gaushala</h3>
+                        <p>
+                            Kutheda Kherla<br>
+                            Teh. Amb Distt. Una<br>
+                            Himachal Pradesh<br><br>
+                            <strong>Phone:</strong> 7018606101<br>
+                            <strong>Email:</strong> Officialgaushala@gmail.com<br>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="veg.html">Home</a></li>
+                         
+                            <li><i class="bx bx-chevron-right"></i> <a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                           
+                            <li><i class="bx bx-chevron-right"></i> <a href="veg.html">Organic Vegetables</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Get In Touch Via Social</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4">
+            <div class="copyright">
+                © Copyright <strong><span>Baba Bharathhari Nath Ji Gaushala</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="#">Faiziya Rahmat</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+      
+</script>
+<script>
+ 
+ document.getElementById('hamburger-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.querySelector('.mobile-menu');
+      mobileMenu.classList.toggle('show');
+      const icon = this.querySelector('i');
+      if (mobileMenu.classList.contains('show')) {
+        icon.classList.remove('bi-list');
+        icon.classList.add('bi-x');
+      } else {
+        icon.classList.remove('bi-x');
+        icon.classList.add('bi-list');
+      }
+    });
+
+    // Unified dropdown handler for both mobile and desktop
+    document.querySelectorAll('.dropdown > a').forEach(function(dropdownToggle) {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = this.parentElement;
+        const dropdownMenu = this.nextElementSibling;
+        
+        // Close all other dropdowns first
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('dropdown-open');
+            d.querySelector('.dropdown-menu').style.display = 'none';
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('dropdown-open');
+        dropdownMenu.style.display = dropdown.classList.contains('dropdown-open') ? 'block' : 'none';
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('show')) {
+        mobileMenu.classList.remove('show');
+        const icon = hamburgerBtn.querySelector('i');
+        icon.classList.add('bi-list');
+        icon.classList.remove('bi-x');
+      }
+    });
+  </script>
+
+  <!-- Main JS -->
+  <script>
+    // Preloader and AOS initialization
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) preloader.style.display = 'none';
+      
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.scrollY > 300);
+    });
+
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbar = document.querySelector('#navbar ul');
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      // Toggle mobile menu
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navbar.classList.toggle('navbar-mobile-active');
+      });
+
+      // Remove duplicate dropdown handler since we have a unified one above
+
+      // Document click handler (close menus when clicking outside)
+      document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+          // Reset mobile navigation
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+          
+          // Close all dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+
+        // Close dropdowns when clicking anywhere else on the page
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+
+      // Simplified resize handler
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+        } else {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+    });
+  </script>
+
+ </script>
+</body>
+</html>

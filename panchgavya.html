@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Services: Panch Gavya</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    a {
+    color: cadetblue;
+    text-decoration: none;
+}
+    :root {
+      --primary-color: #1d863a;
+      --secondary-color: #155724;
+      --text-color: #444;
+      --light-bg: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      line-height: 1.7;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    h1, h2, h3, h5, h6 {
+
+      color: cadetblue;
+    }
+    h4{
+      color: cornsilk;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Header */
+    #header {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    @media (max-width: 1024px) 
+    {
+      
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column !important;
+        z-index: 60;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
+
+      .mobile-menu.show {
+        display: flex !important;
+      }
+
+      #hamburger-btn {
+        position: relative;
+        z-index: 70;
+        display: block;
+        background: transparent;
+        border: solid transparent;
+    }
+
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+      }
+
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+    .navbar a {
+      color: var(--text-color);
+      font-weight: 500;
+      padding: 10px 15px;
+      position: relative;
+    }
+
+    .navbar a:hover,
+    .navbar .active a {
+      color: var(--primary-color);
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      background: white;
+      padding: 10px 0;
+      border-radius: 8px;
+      min-width: 200px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    @media (max-width: 1024px) {
+      .dropdown-menu {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        margin: 5px 0 5px 20px;
+        padding: 0;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (max-width: 1024px) {
+      .dropdown-open .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+    .dropdown-item {
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: cadetblue;
+      padding-left: 25px;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 28px;
+      color: cadetblue;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 70;
+    }
+
+    @media (max-width: 991px) {
+      .navbar ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        overflow-y: auto;
+        padding: 1vh 20px 20px;
+        z-index: 60;
+
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        display: block;
+      }
+
+      .navbar a::after {
+        display: none;
+      }
+
+      .dropdown-menu {
+        position: static !important;
+        box-shadow: none;
+        margin: 5px 0;
+        padding: 10px 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 70;
+      }
+
+      .navbar-mobile-active {
+        display: block !important;
+      }
+      
+      .main-content h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content .row {
+        flex-direction: column-reverse;
+      }
+      
+      .main-content .col-lg-6:first-child {
+        margin-top: 30px;
+      }
+      
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      padding: 40px 0;
+      background: var(--light-bg);
+    }
+
+    .breadcrumbs h2 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .breadcrumbs ol {
+      background: rgba(255,255,255,0.8);
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+    }
+    
+    .breadcrumbs ol li {
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    
+    .breadcrumbs ol li + li {
+      padding-left: 10px;
+    }
+    
+    .breadcrumbs ol li + li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: var(--text-color);
+      content: "/";
+    }
+    
+    @media (max-width: 768px) {
+      .breadcrumbs {
+        padding: 20px 0;
+      }
+      
+      .breadcrumbs h2 {
+        font-size: 1.5rem;
+      }
+      
+      .breadcrumbs ol {
+        padding: 6px 10px;
+      }
+    }
+
+    /* Main Content */
+    .main-content {padding: 60px 0; overflow-x: hidden;
+}
+
+    .main-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .main-content h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: cadetblue;
+    }
+
+    .main-content p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    
+    .benefits-list {
+      background: var(--light-bg);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+    
+    .benefits-list h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .benefits-list ul li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .benefits-list ul li i {
+      margin-top: 5px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .main-content h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content .row {
+        flex-direction: column-reverse;
+      }
+      
+      .main-content .col-lg-6:first-child {
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 40px 0;
+      }
+      
+      .main-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .main-content p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Footer */
+    #footer {
+      background: cadetblue;
+      color: rgba(255,255,255,0.9);
+      padding: 60px 0 20px;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    #footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+    #footer .footer-contact p {
+      font-size: 0.95rem;
+    }
+
+    #footer .footer-links ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    #footer .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    #footer .footer-links a {
+      color: rgba(255,255,255,0.8);
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    #footer .footer-links a:hover {
+      color: #fff;
+      padding-left: 8px;
+    }
+
+    #footer .social-links a {
+      font-size: 1.4rem;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    #footer .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    #footer .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #preloader:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border: 3px solid #ddd;
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Header -->
+  <header id="header" class="sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="index.html">Baba Bharathhari Ji Gaushala</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <button id="hamburger-btn" class="mobile-nav-toggle">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="mobile-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="active"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="panchgavya.html">Panch Gavya</a></li>
+              <li><a class="dropdown-item" href="veg.html">Organic Vegetables</a></li>
+              <li><a class="dropdown-item" href="fertilizer.html">Fertilizer</a></li>
+              <li><a class="dropdown-item" href="havandhoop.html">Havan Dhoop</a></li>
+            </ul>
+          </li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Social.html">Social Members</a></li>
+              <li><a class="dropdown-item" href="society.html">Society Members</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Panch Gavya</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Services</li>
+          <li>Panch Gavya</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main">
+    <section class="main-content">
+      <div class="container">
+        <h1 class="text-center" data-aos="fade-up">Discover Panch Gavya</h1>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+            <img src="https://www.forrest-india.org/wp-content/uploads/2022/05/Panchagavya.jpeg" alt="Panch Gavya Products" class="img-fluid rounded-3 shadow">
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <p class="lead">
+              Panchagavya, an ancient Ayurvedic formulation, combines five sacred cow products to create 
+              a powerful natural solution for holistic agriculture and spiritual practices.
+            </p>
+            <div class="benefits-list">
+              <h3>Key Benefits:</h3>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2-circle text-success me-2"></i><span>Enhances soil fertility naturally</span></li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i><span>Boosts plant immunity and growth</span></li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i><span>Eco-friendly pest management</span></li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i><span>Improves crop yield and quality</span></li>
+              </ul>
+            </div>
+            <div class="text-center mt-4">
+              <a href="https://en.wikipedia.org/wiki/Panchagavya" class="btn btn-primary btn-lg">
+                <i class="bi bi-book me-2"></i>Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Contact Information</h3>
+          <p>
+            Kutheda Kherla <br>
+            Teh. Amb Distt. Una<br>
+            Himachal Pradesh<br><br>
+            <strong>Phone:</strong> +91 7018606101<br>
+            <strong>Email:</strong> officialgaushala@gmail.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="bx bx-chevron-right"></i> Home</a></li>
+            <li><a href="Gallery.html"><i class="bx bx-chevron-right"></i> Gallery</a></li>
+            <li><a href="contactus.html"><i class="bx bx-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="panchgavya.html"><i class="bx bx-chevron-right"></i> Panch Gavya</a></li>
+            <li><a href="veg.html"><i class="bx bx-chevron-right"></i> Organic Vegetables</a></li>
+            <li><a href="fertilizer.html"><i class="bx bx-chevron-right"></i> Fertilizer</a></li>
+            <li><a href="havandhoop.html"><i class="bx bx-chevron-right"></i> Havan Dhoop</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links mt-3">
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+            <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong>Baba Bharathhari Nath Ji Gaushala</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">AHMED ISMAIL, Developed by SAHIL KUMAR & PRINCE RANA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const mobileMenu = document.querySelector('.mobile-menu');
+      mobileMenu.classList.toggle('show');
+      const icon = this.querySelector('i');
+      if (mobileMenu.classList.contains('show')) {
+        icon.classList.remove('bi-list');
+        icon.classList.add('bi-x');
+      } else {
+        icon.classList.remove('bi-x');
+        icon.classList.add('bi-list');
+      }
+    });
+
+    // Unified dropdown handler for both mobile and desktop
+    document.querySelectorAll('.dropdown > a').forEach(function(dropdownToggle) {
+      dropdownToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = this.parentElement;
+        const dropdownMenu = this.nextElementSibling;
+        
+        // Close all other dropdowns first
+        document.querySelectorAll('.dropdown').forEach(d => {
+          if (d !== dropdown) {
+            d.classList.remove('dropdown-open');
+            d.querySelector('.dropdown-menu').style.display = 'none';
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('dropdown-open');
+        dropdownMenu.style.display = dropdown.classList.contains('dropdown-open') ? 'block' : 'none';
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      if (!hamburgerBtn.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('show')) {
+        mobileMenu.classList.remove('show');
+        const icon = hamburgerBtn.querySelector('i');
+        icon.classList.add('bi-list');
+        icon.classList.remove('bi-x');
+      }
+    });
+  </script>
+
+  <!-- Main JS -->
+  <script>
+    // Preloader and AOS initialization
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) preloader.style.display = 'none';
+      
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.scrollY > 300);
+    });
+
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navbar = document.querySelector('#navbar ul');
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      // Toggle mobile menu
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+        navbar.classList.toggle('navbar-mobile-active');
+      });
+
+      // Remove duplicate dropdown handler since we have a unified one above
+
+      // Document click handler (close menus when clicking outside)
+      document.addEventListener('click', function(e) {
+        if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+          // Reset mobile navigation
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+          
+          // Close all dropdowns
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+
+        // Close dropdowns when clicking anywhere else on the page
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+
+      // Simplified resize handler
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-mobile-active');
+          mobileNavToggle.classList.replace('bi-x', 'bi-list');
+        } else {
+          document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('dropdown-open'));
+        }
+      });
+    });
+  </script>
+</body>
+</html>
